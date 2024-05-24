@@ -50,3 +50,7 @@ Disconnection
 ending matches
 entire game
 ...more?
+
+# Possible issue
+the `.csproj` specifies the Facepunch .dll to be where it is on my computer. If you have problems, you may need to build Facepunch steamworks, and edit the location to be where yours is on your pc. 
+Then also you'd have to replace the `steam_api64.dll` in your project & next to your built .exe
