@@ -9,6 +9,9 @@ Documentation:
 https://wiki.facepunch.com/steamworks/
 Read the "Classes" sections for the class you want to use. It assumes intermediate or above programmer skill, so it doesn't tell you much. Break stuff, see what happens, learn. 
 
+IF YOU DIDN'T DO SNOPEK'S VIDEO TUTORIALS... Do them first. It'll take you an afternoon & is REQUIRED knowledge to understand what's going on because I changed a number of things. 
+Also the videos are with Godot 3, so you should join Snopek's discord for the API Changes to Godot 4. 
+
 # For Builds
 Make sure you copy over the `steam_api64.dll` and put it next to the `.exe` for standalone execution.
 Currently ONLY suppoorts windows. You'd have to build Facepunch Steamworks if you want to support other platforms & figure out how to get the `.csproj` to take that stuff.
