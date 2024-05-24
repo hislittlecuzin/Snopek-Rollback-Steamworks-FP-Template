@@ -5,11 +5,13 @@ Made with Godot 4.2.1 MONO
 Needs C#. Used Visual Studio 2022 Community Edition. (Free for Individuals... maybe also free for very small companies with commercial use... maybe free for sole proprieterships with commercial use.)
 Uses Facepunch's Steamworks implementation 
 https://github.com/Facepunch/Facepunch.Steamworks
+Documentation:
 https://wiki.facepunch.com/steamworks/
 Read the "Classes" sections for the class you want to use. It assumes intermediate or above programmer skill, so it doesn't tell you much. Break stuff, see what happens, learn. 
 
 # For Builds
 Make sure you copy over the `steam_api64.dll` and put it next to the `.exe` for standalone execution.
+Currently ONLY suppoorts windows. You'd have to build Facepunch Steamworks if you want to support other platforms & figure out how to get the `.csproj` to take that stuff.
 
 # Access Steamworks Functionality:
 NOT COMPATIBLE WITH GODOTSTEAM! YOU CAN ONLY USE FACEPUNCH STEAMWORKS
