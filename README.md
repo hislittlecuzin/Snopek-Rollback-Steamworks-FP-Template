@@ -43,7 +43,8 @@ For data that must be received like "start the game" use `reliable_to_peer` like
 
 Most stuff in the region "Snopek Stuff" you can ignore.
 
-
+# How to test?
+Own two computers. I suggest buying cheap laptops off eBay. a laptop with a gtx 960m, gtx 1050, or newer is perfectly adequate imo unless you have REALLY good graphics.
 
 # to do by you
 Disconnection
