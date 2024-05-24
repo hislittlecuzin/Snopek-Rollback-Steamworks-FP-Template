@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbsqfk0r15xfe"]
+
+[ext_resource type="Script" path="res://Scripts/Menus/main_menu.gd" id="1_j60pl"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j60pl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "hislittlecuzin's Airsoft Pew Pew"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 130.0
+offset_right = 114.0
+offset_bottom = 170.0
+
+[node name="Singleplayer Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Singleplayer"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Host Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Host Steam 
+Multiplayer"
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+item_count = 2
+selected = 0
+allow_reselect = true
+popup/item_0/text = "Public"
+popup/item_0/id = 0
+popup/item_1/text = "Friends Only"
+popup/item_1/id = 1
+
+[node name="Client Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Find Steam
+Multiplayer Game"
+
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/Host Button" to="." method="HostMultiplayerLobby"]
+[connection signal="button_down" from="VBoxContainer/Client Button" to="." method="SeverBrowser"]

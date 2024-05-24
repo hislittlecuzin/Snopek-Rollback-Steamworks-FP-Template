@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxvk8kp0rgx2h"]
+
+[ext_resource type="Script" path="res://Scripts/Menus/pre-game_lobby.gd" id="1_rb17j"]
+
+[node name="Steam pre-game_Lobby" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rb17j")
+
+[node name="Leave Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 34.0
+offset_right = 218.0
+offset_bottom = 65.0
+text = "Leave Lobby"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 386.0
+offset_top = 126.0
+offset_right = 833.0
+offset_bottom = 395.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Players: "
+
+[node name="Player List VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 27.0
+offset_right = 438.0
+offset_bottom = 258.0
+
+[node name="Start Game Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 981.0
+offset_top = 534.0
+offset_right = 1077.0
+offset_bottom = 565.0
+text = "Start Game"
+
+[connection signal="button_down" from="Start Game Button" to="." method="StartGame"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://d04gjmjx8wieo"]
+
+[ext_resource type="Script" path="res://Scripts/Field And Game Mode/Players/networked_player_v1.gd" id="1_rro81"]
+
+[node name="NetworkedPlayer" type="Node3D" node_paths=PackedStringArray("cam") groups=["network_sync"]]
+script = ExtResource("1_rro81")
+cam = NodePath("Body/Head/Camera3D")
+
+[node name="Body" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+cone = true
+
+[node name="Head" type="CSGBox3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.779418, 0)
+size = Vector3(0.4, 0.4, 0.4)
+
+[node name="Camera3D" type="Camera3D" parent="Body/Head"]
+
+[node name="Gun" type="CSGBox3D" parent="Body/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.149508, -0.149587, -0.386769)
+size = Vector3(0.1, 0.1, 1)
