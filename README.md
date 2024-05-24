@@ -8,10 +8,10 @@ https://github.com/Facepunch/Facepunch.Steamworks
 https://wiki.facepunch.com/steamworks/
 Read the "Classes" sections for the class you want to use. It assumes intermediate or above programmer skill, so it doesn't tell you much. Break stuff, see what happens, learn. 
 
-#For Builds
+# For Builds
 Make sure you copy over the `steam_api64.dll` and put it next to the `.exe` for standalone execution.
 
-#Access Steamworks Functionality:
+# Access Steamworks Functionality:
 NOT COMPATIBLE WITH GODOTSTEAM! YOU CAN ONLY USE FACEPUNCH STEAMWORKS
 Scripts->CS->FPSteamManager.cs
 This is where steam is initialized and accessed by GD Script.
@@ -22,15 +22,15 @@ Global class `MPManager` accesses Facepunch's steamwworks by `MPManager.Facepunc
 `MPManager.Facepunch.TheNameOfTheMethodIWantToCall(TheNameOfTheArgumentVariableIWantToPass, AnotherVariableIfIWantToSendThatToo)`
 
 
-#For network communication
+# For network communication
 Most of the basic stuff is there if you just want to use Snopek's stuff the way it is.
 YOU CANNOT USE RPC. 
 You have to serialize and de-serialize data manually. 
-#serialize data
+# serialize data
 `SteamMessageSerializer.gd` is the serializer used for serializing data. The network process EXPECTS a 64 bit number for the receiving Steam ID (not connection ID), an 8 bit packet identifier, and a 64 bit Steam ID of who sent the packet.
 For easier use, I use `Globals.gd` to have names of packets. with 8 bits avaiable, you can make 128~256 different packet types. 
 
-#network transmissions
+# network transmissions
 `SteamSocketNetworkAdapter.gd` is used for all network communication & routing. 
 Packets are received by `process_new_on_message_client` or `process_new_on_message` - I need to depricate the client one since it just calls the server one anyway.
 Add if statement for your new incoming packet. 
@@ -43,7 +43,7 @@ Most stuff in the region "Snopek Stuff" you can ignore.
 
 
 
-#to do by you
+# to do by you
 Disconnection
 ending matches
 entire game
