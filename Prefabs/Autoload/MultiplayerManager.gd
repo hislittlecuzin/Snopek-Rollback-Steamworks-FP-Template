@@ -10,7 +10,7 @@ var steam_id_to_connection_id_dictionary = {}
 const port = 6969
 const max_players = 4
 
-const steam_app_id := 2478900
+const steam_app_id := 480
 
 const STEAM_ENABLED = true
 @onready var Facepunch = get_tree().root.get_node("/root/FpSteamManager")
