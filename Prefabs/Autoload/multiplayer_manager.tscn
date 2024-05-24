@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cigemjw76j227"]
+
+[ext_resource type="Script" path="res://Prefabs/Autoload/MultiplayerManager.gd" id="1_17cge"]
+
+[node name="MultiplayerManager" type="Node"]
+script = ExtResource("1_17cge")
+
+[node name="EmergencyLabel" type="Label" parent="."]
+visible = false
+offset_left = 946.0
+offset_top = 240.0
+offset_right = 1146.0
+offset_bottom = 412.0
+autowrap_mode = 2

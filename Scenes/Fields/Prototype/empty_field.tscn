@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://s6bk6pdcaqu3"]
+
+[ext_resource type="Script" path="res://Scripts/Field And Game Mode/FieldManager.gd" id="1_8gq8c"]
+[ext_resource type="Texture2D" uid="uid://cx5jj04vl74e7" path="res://icon.svg" id="1_kfg2r"]
+[ext_resource type="PackedScene" uid="uid://d04gjmjx8wieo" path="res://Prefabs/networked_player.tscn" id="3_gv5wk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1g04j"]
+albedo_texture = ExtResource("1_kfg2r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1iv7c"]
+albedo_texture = ExtResource("1_kfg2r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lk7cu"]
+albedo_texture = ExtResource("1_kfg2r")
+
+[node name="Field_Manager" type="Node3D" node_paths=PackedStringArray("playerPawns")]
+script = ExtResource("1_8gq8c")
+playerPawns = [NodePath("NetworkedPlayer"), NodePath("NetworkedPlayer2")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.776024, 0.630703, 0, -0.630703, 0.776024, -9.53674e-07, 11.762, 18.9609)
+
+[node name="Scenery" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Scenery"]
+transform = Transform3D(1, 0, 0, 0, 0.559193, 0.829038, 0, -0.829038, 0.559193, 0, 11, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Scenery"]
+material_override = SubResource("StandardMaterial3D_1g04j")
+size = Vector3(50, 1, 40)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Scenery"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -20)
+material_override = SubResource("StandardMaterial3D_1iv7c")
+size = Vector3(50, 10, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Scenery"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 20)
+material_override = SubResource("StandardMaterial3D_1iv7c")
+size = Vector3(50, 10, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Scenery"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 0)
+material_override = SubResource("StandardMaterial3D_lk7cu")
+size = Vector3(1, 10, 40)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Scenery"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.6238, 5, 0)
+material_override = SubResource("StandardMaterial3D_lk7cu")
+size = Vector3(1, 10, 40)
+
+[node name="NetworkedPlayer" parent="." instance=ExtResource("3_gv5wk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.924534, 1)
+
+[node name="NetworkedPlayer2" parent="." instance=ExtResource("3_gv5wk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.57933, 1.25423, -4.99705)

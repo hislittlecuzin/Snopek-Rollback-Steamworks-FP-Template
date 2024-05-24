@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu3nimbew4jr8"]
+
+[ext_resource type="Script" path="res://Scripts/CS/FindLobbies.cs" id="1_ceh7f"]
+[ext_resource type="PackedScene" uid="uid://cdiy3r7n77383" path="res://Scenes/Menus/Prefabs/steam_server_browser_joinable_lobby_button.tscn" id="2_sftto"]
+
+[node name="ServerBrowser" type="Control" node_paths=PackedStringArray("lobbiesContainer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ceh7f")
+lobbiesContainer = NodePath("Panel/ScrollContainer/ServerList VBoxContainer")
+lobbySelector = ExtResource("2_sftto")
+lobbyScreen = "res://Scenes/Menus/pre-game_lobby.tscn"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 386.0
+offset_top = 126.0
+offset_right = 833.0
+offset_bottom = 395.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Steam Lobbies:"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 2
+offset_left = 14.0
+offset_top = 27.0
+offset_right = 438.0
+offset_bottom = 258.0
+
+[node name="ServerList VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
+layout_mode = 2
+
+[node name="Back Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Back to Multiplayer Selection"
+
+[node name="Join Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 935.0
+offset_top = 522.0
+offset_right = 973.0
+offset_bottom = 553.0
+text = "Join"
+
+[connection signal="button_down" from="Back Button" to="." method="ReturnToMainMenu"]
+[connection signal="button_down" from="Join Button" to="." method="JoinLobby"]
