@@ -52,6 +52,11 @@ ending matches
 entire game
 ...more?
 
-# Possible issue
+# Possible issues
 the `.csproj` specifies the Facepunch .dll to be where it is on my computer. If you have problems, you may need to build Facepunch steamworks, and edit the location to be where yours is on your pc. 
 Then also you'd have to replace the `steam_api64.dll` in your project & next to your built .exe
+
+Sync manager has been modified. I think directly.
+
+Something about checking the ability to do network processes may have been changed... do a "Find" (Control + F) on sync manager for calling `node.network_process` or something.
+Snopek's original code expects use of Godot's built in RPC functionality which I wasn't using, so it wasn't compatible. 
